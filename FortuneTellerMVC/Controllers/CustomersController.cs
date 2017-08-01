@@ -32,6 +32,115 @@ namespace FortuneTellerMVC.Controllers
             {
                 return HttpNotFound();
             }
+            if (customer.Age % 2 == 0) // if age is even number...
+            {
+                ViewBag.RetirementAge = 75; // ...retire in 20 years
+            }
+            else // if age is odd number...
+            {
+                ViewBag.RetirementAge = 80; // ...retire in 35 years
+            }
+            if (customer.NumberOfSiblings == 0m)
+            {
+                ViewBag.VacationHome = "Paris";
+            }
+            else if (customer.NumberOfSiblings == 1m)
+            {
+                ViewBag.VacationHome = "Tuscany";
+            }
+            else if (customer.NumberOfSiblings == 2m)
+            {
+                ViewBag.VacationHome = "Hawaii";
+            }
+            else if (customer.NumberOfSiblings == 3m)
+            {
+                ViewBag.VacationHome = "Alaska";
+            }
+            else if (customer.NumberOfSiblings > 3m)
+            {
+                ViewBag.VacationHome = "Cleveland";
+            }
+            else if (customer.NumberOfSiblings < 0m)
+            {
+                ViewBag.VacationHome = "a cardboard box"; // if user entered negative number, they get a bad vacation home
+            }
+
+            switch (customer.FavoriteColor.ToLower())
+            {
+                case "red":
+                    ViewBag.Transportation = "Mercedes-Benz";
+                    break;
+                case "orange":
+                    ViewBag.Transportation = "mini van";
+                    break;
+                case "yellow":
+                    ViewBag.Transportation = "luxury yacht";
+                    break;
+                case "green":
+                    ViewBag.Transportation = "private jet";
+                    break;
+                case "blue":
+                    ViewBag.Transportation = "Jeep Wrangler";
+                    break;
+                case "indigo":
+                    ViewBag.Transportation = "tricycle";
+                    break;
+                case "violet":
+                    ViewBag.Transportation = "hoverboard";
+                    break;
+            }
+            if (customer.BirthMonth == "January")
+            {
+                ViewBag.Money = "$1,000,000";
+            }
+            else if (customer.BirthMonth == "February")
+            {
+                ViewBag.Money = "$1,000,000";
+            }
+            else if (customer.BirthMonth == "March")
+            {
+                ViewBag.Money = "$1,000,000";
+            }
+            else if (customer.BirthMonth == "April")
+            {
+                ViewBag.Money = "$1,000,000";
+            }
+            else if (customer.BirthMonth == "May")
+            {
+                ViewBag.Money = "$5,000,000";
+            }
+            else if (customer.BirthMonth == "June")
+            {
+                ViewBag.Money = "$5,000,000";
+            }
+            else if (customer.BirthMonth == "July")
+            {
+                ViewBag.Money = "$5,000,000";
+            }
+            else if (customer.BirthMonth == "August")
+            {
+                ViewBag.Money = "$5,000,000";
+            }
+            else if (customer.BirthMonth == "Septemeber")
+            {
+                ViewBag.Money = "$20,000,000";
+            }
+            else if (customer.BirthMonth == "October")
+            {
+                ViewBag.Money = "$20,000,000";
+            }
+            else if (customer.BirthMonth == "November")
+            {
+                ViewBag.Money = "$20,000,000";
+            }
+            else if (customer.BirthMonth == "December")
+            {
+                ViewBag.Money = "$20,000,000";
+            }
+            else
+            {
+                ViewBag.Money = "$0.00";
+            }
             return View(customer);
         }
 
